@@ -26,6 +26,11 @@
   * **Seg 分割模式**：鼠标点选关键轮廓，双击自动拟合多边形边界。
 * **📤 丰富数据导出**：支持 **Pascal VOC XML**、**COCO JSON (Labelme Standard)**、**YOLO TXT (Box/Seg)** 快速导出。
 * **💻 现代化 PySide6 交互界面**：实时帧拖拽、多比例缩放、自动化进度条显示及操作日志反馈。
+* **演示视频**
+* 
+
+https://github.com/user-attachments/assets/c1b01f5e-6532-4ca2-a27c-dafe905504ca
+
 
 ---
 
