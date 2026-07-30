@@ -26,42 +26,52 @@
 
 ```bash
 # 1. 克隆本仓库
-git clone [https://github.com/ILZFLNO02/SAM-AutoAnnotator.git](https://github.com/ILZFLNO02/SAM-AutoAnnotator.git)
+git clone https://github.com/ILZFLNO02/SAM-AutoAnnotator.git
 cd SAM-AutoAnnotator
 
 # 2. 安装基础依赖
 pip install -r requirements.txt
+```
 
+### 2. 模型权重配置 (`resources/` 文件夹)
 
-📖 使用步骤 (Step-by-Step Guide)
-📥 加载数据：
+为了使追踪与 SAM 2 推理正常运行，请确保项目的 `resources/` 文件夹内包含以下权重文件（若缺少对应模型，系统将自动降级使用传统算法）：
 
-点击顶部 📁 图片目录读取 或 🎬 视频读取 载入素材。
+* `sam2_hiera_tiny_encoder.with_runtime_opt.ort` (SAM 2 Encoder)
+* `sam2_hiera_tiny_decoder.onnx` (SAM 2 Decoder)
+* `nanotrack_backbone_sim.onnx` (NanoTrack Backbone)
+* `nanotrack_head_sim.onnx` (NanoTrack Head)
 
-💾 设置输出路径：
+---
 
-点击 💾 设定保存目录 指定图像与标注结果的导出目录。
+## 🚀 快速上手 (Quick Start)
 
-🏷️ 管理标签与选择模式：
+运行主程序启动图形化界面：
 
-在左侧 标签类别管理 中添加目标类别（如 person, car）。
+```bash
+python main.py
+```
 
-在顶部下拉框中切换 Box检测 或 Seg分割 模式。
+### 📖 使用步骤 (Step-by-Step Guide)
 
-✏️ 绘制首帧标注：
+1. **📥 加载数据**：
+   * 点击顶部 `📁 图片目录读取` 或 `🎬 视频读取` 载入素材。
+2. **💾 设置输出路径**：
+   * 点击 `💾 设定保存目录` 指定图像与标注结果的导出目录。
+3. **🏷️ 管理标签与选择模式**：
+   * 在左侧 `标签类别管理` 中添加目标类别（如 `person`, `car`）。
+   * 在顶部下拉框中切换 **Box检测** 或 **Seg分割** 模式。
+4. **✏️ 绘制首帧标注**：
+   * **Box 模式**：在画面中按住鼠标左键拖拽画框。
+   * **Seg 模式**：沿目标边缘依次点击关键点，**双击** 完成封闭多边形构建。
+5. **⚡ 启动连续自动追踪**：
+   * 设置 `标注时长(秒)`，点击 `▶ 开始连续标注`。后台线程将自动逐帧追踪、生成标注并自动导出数据！
 
-Box 模式：在画面中按住鼠标左键拖拽画框。
+---
 
-Seg 模式：沿目标边缘依次点击关键点，双击 完成封闭多边形构建。
+## 📁 目录结构 (Directory Structure)
 
-⚡ 启动连续自动追踪：
-
-设置 标注时长(秒)，点击 ▶ 开始连续标注。后台线程将自动逐帧追踪、生成标注并自动导出数据！
-
-📁 目录结构 (Directory Structure)
-Plaintext
-
-
+```text
 SAM-AutoAnnotator/
 ├── resources/           # 模型权重文件 (ONNX / ORT)
 ├── main.py              # 应用主程序入口
@@ -69,5 +79,10 @@ SAM-AutoAnnotator/
 ├── tracker_module.py    # SAM 2 推理引擎与 Tracking 线程算法
 ├── utils.py             # VOC XML / COCO JSON / YOLO TXT 数据导出工具
 └── requirements.txt     # 项目依赖列表
-🤝 贡献与反馈 (Contributing & Feedback)
-欢迎提交 Issue 或 Pull Request 为本项目改进做贡献！如果这个项目帮到了你，请点个 🌟 Star 给予鼓励支持！
+```
+
+---
+
+## 🤝 贡献与反馈 (Contributing & Feedback)
+
+欢迎提交 **Issue** 或 **Pull Request** 为本项目改进做贡献！如果这个项目帮到了你，请点个 🌟 **Star** 给予鼓励支持！
