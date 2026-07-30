@@ -4,6 +4,17 @@
 > 
 > 💡 **“首帧标注，全程自动”** —— 告别逐帧标注的枯燥繁琐！支持目标检测框（Bounding Box）与像素级多边形分割（Polygon Segmentation）的高精度自动追踪，一键导出 VOC、COCO、YOLO 等主流数据集格式。
 
+### 模型权重配置 (`resources/` 文件夹)
+
+> ⚠️ **注意**：由于 SAM 2 Encoder 模型文件大小超过 GitHub 单文件上传限制，仓库中未直接包含该模型权重。为了保障 SAM 2 分割追踪功能的正常运行，请在运行前手动下载并放置到 `resources/` 目录下。
+
+请下载并确保 `resources/` 目录中包含以下权重文件（若缺少对应模型，系统将自动降级使用传统追踪算法）：
+
+* 📥 **`sam2_hiera_tiny_encoder.with_runtime_opt.ort`** *(SAM 2 Encoder 核心模型)*
+  👉 [点击此处前往下载资源文件]([你的下载链接](https://huggingface.co/g-ronimo/sam2-tiny/tree/main))
+* `sam2_hiera_tiny_decoder.onnx
+* `sam2_hiera_tiny_encoder.with_runtime_opt.ort
+
 ---
 
 ## ✨ 核心特性 (Key Features)
