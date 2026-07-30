@@ -10,8 +10,8 @@
 
 请下载并确保 `resources/` 目录中包含以下权重文件（若缺少对应模型，系统将自动降级使用传统追踪算法）：
 
-* 📥 **`sam2_hiera_tiny_encoder.with_runtime_opt.ort`** *(SAM 2 Encoder 核心模型)*
   👉 [点击此处前往下载资源文件](https://huggingface.co/g-ronimo/sam2-tiny/tree/main)
+  下载下列两个文件并防止到resources目录中
 * `sam2_hiera_tiny_decoder.onnx
 * `sam2_hiera_tiny_encoder.with_runtime_opt.ort
 
