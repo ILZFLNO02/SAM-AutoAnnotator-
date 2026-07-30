@@ -86,3 +86,8 @@ SAM-AutoAnnotator/
 ## 🤝 贡献与反馈 (Contributing & Feedback)
 
 欢迎提交 **Issue** 或 **Pull Request** 为本项目改进做贡献！如果这个项目帮到了你，请点个 🌟 **Star** 给予鼓励支持！
+---
+
+## 📄 开源许可 (License)
+
+本项目基于 [MIT License](LICENSE) 开源。你可以自由使用、修改和分发本项目，但请在副本中保留原作者署名与版权声明。
